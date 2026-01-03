@@ -4,8 +4,6 @@
 This project implements a professional Medallion Architecture using **Databricks** and **Unity Catalog** to process 100k+ rows of Olist e-commerce data. The goal was to transform raw, multilingual transactional data into a "BI-ready" **Star Schema**, focusing on data governance, performance optimization, and auditability.
 
 ## Architecture & Governance
-![](/Workspace/Users/mahammadnaushad07@gmail.com/brazilian_ecommerce_analysis/docs/ERD Diagram.png)
-
 I utilized the Unity Catalog to manage data access and lineage across three distinct layers:
 
 ### 1. Bronze Layer (Raw Ingestion)
