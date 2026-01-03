@@ -29,7 +29,7 @@ This layer focuses on standardization and preparing data for analysis:
 
 ## Technical Optimizations
 - **Delta Lake Features**: Leveraged Auto-Optimize and Auto-Compaction table properties to solve the "Small File Problem".
-- **Schema Handling**: Used mergeSchema and overWriteSchema ![options](path) to ensure the pipeline remains resilient to source data changes.
+- **Schema Handling**: Used mergeSchema and overWriteSchema options to ensure the pipeline remains resilient to source data changes.
 - **Memory Management**: Utilized broadcast() for small lookup tables to avoid expensive Spark shuffles.
 
 ## Tech Stack
