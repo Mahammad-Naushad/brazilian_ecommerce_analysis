@@ -14,7 +14,7 @@ I utilized the Unity Catalog to manage data access and lineage across three dist
 ### 2. Silver Layer (Cleansing & Enrichment)
 This layer focuses on standardization and preparing data for analysis:
 
-- **Modular Pipeline**: Developed a reusable Python utility function, write_silver_table, to standardize metadata injection and Delta writes.
+- **Modular Pipeline**: Developed a reusable Python utility functions to read, write and tranform the data. Also, standardized metadata injection and Delta writes.
 - **Data Enrichment**:
    - **Geospatial**: Aggregated 1M+ geolocation points into a deduplicated zip-code reference table.
    - **Translation**: Broadcast-joined a Portuguese-to-English mapping to make product categories globally readable.
@@ -24,8 +24,9 @@ This layer focuses on standardization and preparing data for analysis:
 
 ### 3. Gold Layer (Business Logic)
 
-- Implementing a Star Schema designed for high-performance BI reporting.
-- Transforming Silver tables into a central Fact_Sales table and associated Dimension tables (dim_products, dim_customers).
+- Implementing a **Star Schema** designed for high-performance BI reporting tools such as Power BI and Tableau.
+- Transforming Silver tables into a central fact_sales table and associated Dimension tables (dim_products, dim_customers and dim_sellers).
+- **Data Modeling:** Modeled the relationships explicitly (see ER Diagram in docs/).
 
 ## Technical Optimizations
 - **Delta Lake Features**: Leveraged Auto-Optimize and Auto-Compaction table properties to solve the "Small File Problem".
