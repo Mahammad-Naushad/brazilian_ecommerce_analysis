@@ -4,6 +4,8 @@
 This project implements a professional Medallion Architecture using **Databricks** and **Unity Catalog** to process 100k+ rows of Olist e-commerce data. The goal was to transform raw, multilingual transactional data into a "BI-ready" **Star Schema**, focusing on data governance, performance optimization, and auditability.
 
 ## Architecture & Governance
+![](/Workspace/Users/mahammadnaushad07@gmail.com/brazilian_ecommerce_analysis/docs/ERD Diagram.png)
+
 I utilized the Unity Catalog to manage data access and lineage across three distinct layers:
 
 ### 1. Bronze Layer (Raw Ingestion)
@@ -22,14 +24,14 @@ This layer focuses on standardization and preparing data for analysis:
 - **Auditability**: Injected _ingested_at timestamps and _source_file metadata into every record for full data lineage.
 - **Data Quality**: Filtered out null reviews and non-positive payments to ensure downstream integrity.
 
-### 3. Gold Layer (Business Logic - Work in Progress)
+### 3. Gold Layer (Business Logic)
 
 - Implementing a Star Schema designed for high-performance BI reporting.
 - Transforming Silver tables into a central Fact_Sales table and associated Dimension tables (dim_products, dim_customers).
 
 ## Technical Optimizations
 - **Delta Lake Features**: Leveraged Auto-Optimize and Auto-Compaction table properties to solve the "Small File Problem".
-- **Schema Evolution**: Used mergeSchema options to ensure the pipeline remains resilient to source data changes.
+- **Schema Handling**: Used mergeSchema and overWriteSchema ![options](path) to ensure the pipeline remains resilient to source data changes.
 - **Memory Management**: Utilized broadcast() for small lookup tables to avoid expensive Spark shuffles.
 
 ## Tech Stack
